@@ -4,15 +4,16 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
+import DatePicker from 'material-ui/DatePicker';
 
 const style = {
     paddingLeft: 10,
     marginTop: 5,
-     height: '80px',
-    width: '250px',
+    height: '120px',
+    width: '200px',
     float: 'left',
     textAlign: 'center',
-    lineHeight: '20px'
+    lineHeight: '15px',
 };
 
 export default class Search extends Component {
@@ -28,9 +29,9 @@ export default class Search extends Component {
     handleUpdateInput = (value) => {
         this.setState({
             dataSource: [
-                value,
-                value + value,
-                value + value + value,
+                'Moscow',
+                'Saint Petersburg',
+                'Vologda'
             ],
         });
     };
@@ -39,7 +40,7 @@ export default class Search extends Component {
         return (
             <div>
                 <Paper style={{...style, marginLeft: 1}} zDepth={1} >
-                    <div style={{fontSize: 11, margin: 0, textAlign: 'left'}}>
+                    <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
                         Choose city
                     </div>
                     <AutoComplete
@@ -52,7 +53,7 @@ export default class Search extends Component {
                 </Paper>
 
                 <Paper style={style} zDepth={1} >
-                    <div style={{fontSize: 11, margin: 0, textAlign: 'left'}}>
+                    <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
                         Max Price
                     </div>
                     <AutoComplete
@@ -63,18 +64,37 @@ export default class Search extends Component {
 
                     />
                 </Paper>
+                <Paper style={style} zDepth={1} >
+                    <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
+                        Enter the date:
+                    </div>
+
+                    <div>
+                        <DatePicker hintText="Start date"
+                                    underlineStyle={{display: "none"}}/>
+
+                        <div style={{fontSize: 11, margin: 0, textAlign: 'left'}}>
+                            to:
+                        </div>
+
+                        <DatePicker hintText="End date" mode="landscape"
+                                    underlineStyle={{display: "none"}}/>
+                    </div>
+
+
+                </Paper>
 
                 <Paper style={style} zDepth={1} >
-                    <div style={{fontSize: 11, margin: 0, textAlign: 'left'}}>
-                        Min rooms
+                    <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
+                        Select the number of people
                     </div>
                     <DropDownMenu value={this.state.value}
                                   onChange={this.handleChange}
                                   labelStyle={{overflow: "visible"}}
                                   underlineStyle={{display: "none"}}>
-                        <MenuItem value={1} primaryText="1 room"/>
-                        <MenuItem value={2} primaryText="2 room"/>
-                        <MenuItem value={3} primaryText="3 room"/>
+                        <MenuItem value={1} primaryText="1"/>
+                        <MenuItem value={2} primaryText="2"/>
+                        <MenuItem value={3} primaryText="3"/>
                     </DropDownMenu>
                     <RaisedButton label="Search"
                                   labelStyle={{ textTransform: 'none'}}

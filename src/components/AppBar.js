@@ -9,9 +9,9 @@ import Search from './Search';
 
 const AppBarSearch = () => {
     return (
-            <AppBar style={{backgroundColor: {white500}, borderStyle: "none", boxShadow: "none", height: "100px"}}
+            <AppBar style={{backgroundColor: {white500}, borderStyle: "none", boxShadow: "none", height: "300px"}}
                     title={<Search/>}
-                    titleStyle={{float: "left", height: "90px"}}
+                    titleStyle={{float: "left", height: "200px"}}
                     iconStyleLeft={{width: "7%"}}
                     iconElementLeft={
                         <div>
