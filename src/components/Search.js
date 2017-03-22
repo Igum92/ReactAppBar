@@ -27,32 +27,41 @@ export default class Search extends Component {
 
 
     handleUpdateInput = (value) => {
-        this.setState({
-            dataSource: [
-                'Moscow',
-                'Saint Petersburg',
-                'Vologda'
-            ],
-        });
+
+        // fetch('http://localhost:1081?city=' + this.props.city,
+        //     {
+        //         method: 'get',
+        //         headers: {
+        //             'Content-Type': 'application/x-www-form-urlencoded',
+        //             'Accept': 'application/json'
+        //         }
+        //     })
+        //     .then(response => response.json())
+        //     .then(function (dataSource) {
+        //             this.setState({
+        //                 dataSource: dataSource
+        //             });
+        //         }
+        //     );
     };
 
     render() {
         return (
             <div>
-                <Paper style={{...style, marginLeft: 1}} zDepth={1} >
+                <Paper style={{...style, marginLeft: 1}} zDepth={1}>
                     <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
                         Choose city
                     </div>
                     <AutoComplete
                         hintText="Choose city"
                         dataSource={this.state.dataSource}
-                        onUpdateInput={this.handleUpdateInput}
+                        onUpdateInput={this.props.handleCityInputChange}
                         underlineStyle={{display: "none"}}
 
                     />
                 </Paper>
 
-                <Paper style={style} zDepth={1} >
+                <Paper style={style} zDepth={1}>
                     <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
                         Max Price
                     </div>
@@ -64,7 +73,7 @@ export default class Search extends Component {
 
                     />
                 </Paper>
-                <Paper style={style} zDepth={1} >
+                <Paper style={style} zDepth={1}>
                     <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
                         Enter the date:
                     </div>
@@ -84,7 +93,7 @@ export default class Search extends Component {
 
                 </Paper>
 
-                <Paper style={style} zDepth={1} >
+                <Paper style={style} zDepth={1}>
                     <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
                         Select the number of people
                     </div>
@@ -97,9 +106,10 @@ export default class Search extends Component {
                         <MenuItem value={3} primaryText="3"/>
                     </DropDownMenu>
                     <RaisedButton label="Search"
-                                  labelStyle={{ textTransform: 'none'}}
+                                  labelStyle={{textTransform: 'none'}}
                                   primary={true}
-                                  style={{boxShadow: 'none', marginRight: 10}}/>
+                                  style={{boxShadow: 'none', marginRight: 10}}
+                    />
                 </Paper>
 
             </div>

@@ -3,10 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "bluebird": "^3.5.0",
     "material-ui": "^0.17.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-redux": "^5.0.3",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "request-promise": "^4.2.0",
+    "skyscanner": "^0.1.0"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
