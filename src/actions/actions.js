@@ -11,7 +11,7 @@ const receiveSuggestedCities = (cities) => ({
 export const getSuggestedCities = (str) => {
     return function (dispatch) {
         if (str != '') {
-            fetch('http://localhost:1081?query=' + encodeURIComponent(str),
+            fetch('http://localhost:1081/autosuggest?query=' + encodeURIComponent(str),
                 {
                     method: 'get',
                     headers: {
