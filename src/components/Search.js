@@ -21,29 +21,10 @@ export default class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {value: 1, dataSource: []};
+        console.log(JSON.stringify(this.props))
     }
 
     handleChange = (event, index, value) => this.setState({value});
-
-
-    handleUpdateInput = (value) => {
-
-        // fetch('http://localhost:1081?city=' + this.props.city,
-        //     {
-        //         method: 'get',
-        //         headers: {
-        //             'Content-Type': 'application/x-www-form-urlencoded',
-        //             'Accept': 'application/json'
-        //         }
-        //     })
-        //     .then(response => response.json())
-        //     .then(function (dataSource) {
-        //             this.setState({
-        //                 dataSource: dataSource
-        //             });
-        //         }
-        //     );
-    };
 
     render() {
         return (
@@ -54,7 +35,7 @@ export default class Search extends Component {
                     </div>
                     <AutoComplete
                         hintText="Choose city"
-                        dataSource={this.state.dataSource}
+                        dataSource={this.props.suggestedCities}
                         onUpdateInput={this.props.handleCityInputChange}
                         underlineStyle={{display: "none"}}
 

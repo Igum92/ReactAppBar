@@ -1,4 +1,4 @@
-const cities = (state = "", action) => {
+const city = (state = "", action) => {
     console.log(JSON.stringify(action));
     switch (action.type) {
         case "CHANGE_CITY":
@@ -10,4 +10,4 @@ const cities = (state = "", action) => {
 
 };
 
-export default cities;
+export default city;

@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux'
-import cities from "./cities";
+import city from "./city";
+import suggestedCities from "./suggestedCities";
 
 
 
 const rootReducer = combineReducers({
- cities
+ city,
+ suggestedCities
 });
 
 export default rootReducer;
