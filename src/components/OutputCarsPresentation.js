@@ -1,14 +1,11 @@
 import React from 'react';
 
 const OutputCarsPresentation = ({cars}) => {
-    console.log(cars);
-
-
         return (
             <div>
                 { cars ?
                     <div>
-                        {Object.values(cars)}
+                        {(Object.values(cars)).join(", ")}
                     </div>
                 : null }
             </div>

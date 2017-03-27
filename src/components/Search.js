@@ -3,7 +3,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
+import SearchButton from "../containers/SearchButton"
 import DatePicker from 'material-ui/DatePicker';
 
 const style = {
@@ -86,11 +86,7 @@ export default class Search extends Component {
                         <MenuItem value={2} primaryText="2"/>
                         <MenuItem value={3} primaryText="3"/>
                     </DropDownMenu>
-                    <RaisedButton labelStyle={{textTransform: 'none'}}
-                                  label="Search"
-                                  primary={true}
-                                  style={{boxShadow: 'none', marginRight: 10}}
-                    />
+                    <SearchButton/>
                 </Paper>
 
             </div>

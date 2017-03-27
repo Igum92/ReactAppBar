@@ -15,8 +15,8 @@ class App extends Component {
     render() {
         return <MuiThemeProvider>
             <div>
-            <AppBarSearch/>
-            <OutputCars />
+                <AppBarSearch/>
+                <OutputCars/>
             </div>
         </MuiThemeProvider>
     }

@@ -31,7 +31,7 @@ export const carsReceived = (cars) => ({
     cars
 });
 
-export function fetchCars(dispatch) {
+export function fetchCars() {
     return function (dispatch) {
         return fetch('http://localhost:1081/car?city=EDI&start_date=2017-07-01&end_date=2017-07-07')
             .then(response => response.json())
