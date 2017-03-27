@@ -86,8 +86,8 @@ export default class Search extends Component {
                         <MenuItem value={2} primaryText="2"/>
                         <MenuItem value={3} primaryText="3"/>
                     </DropDownMenu>
-                    <RaisedButton label="Search"
-                                  labelStyle={{textTransform: 'none'}}
+                    <RaisedButton labelStyle={{textTransform: 'none'}}
+                                  label="Search"
                                   primary={true}
                                   style={{boxShadow: 'none', marginRight: 10}}
                     />

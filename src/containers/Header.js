@@ -5,13 +5,13 @@ import {getSuggestedCities} from "../actions/actions";
 
 const mapStateToProps = (state) => ({
     city: state.city,
-    suggestedCities: state.suggestedCities
+    suggestedCities: state.suggestedCities,
 });
 
 const mapDispatchToProps = (dispatch) => ({
     handleCityInputChange: (city) => {
         dispatch(cityChanged(city));
-        dispatch(getSuggestedCities(city))
+        dispatch(getSuggestedCities(city));
     }
 });
 

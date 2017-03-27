@@ -9,7 +9,7 @@ import Header from '../containers/Header';
 
 const AppBarSearch = () => {
     return (
-            <AppBar style={{backgroundColor: {white500}, borderStyle: "none", boxShadow: "none", height: "300px"}}
+            <AppBar style={{backgroundColor: {white500}, borderStyle: "none", boxShadow: "none"}}
                     title={<Header/>}
                     titleStyle={{float: "left", height: "200px"}}
                     iconStyleLeft={{width: "7%"}}
