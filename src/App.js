@@ -8,10 +8,6 @@ import {fetchCars} from "./actions/actions";
 
 class App extends Component {
 
-    componentDidMount() {
-        this.props.dispatch(fetchCars());
-    }
-
     render() {
         return <MuiThemeProvider>
             <div>

@@ -3,7 +3,6 @@ import {connect} from "react-redux";
 import OutputCarsPresentation from "../components/OutputCarsPresentation";
 
 const mapStateToProps = (state) => {
-    console.log(state.cars);
     return {
         cars: state.cars
     }

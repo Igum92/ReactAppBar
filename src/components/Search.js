@@ -3,8 +3,9 @@ import AutoComplete from 'material-ui/AutoComplete';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Paper from 'material-ui/Paper';
-import SearchButton from "../containers/SearchButton"
-import DatePicker from 'material-ui/DatePicker';
+import SearchButton from "../containers/SearchButton";
+import Date from "../containers/Date"
+
 
 const style = {
     paddingLeft: 10,
@@ -59,17 +60,7 @@ export default class Search extends Component {
                         Enter the date:
                     </div>
 
-                    <div>
-                        <DatePicker hintText="Start date"
-                                    underlineStyle={{display: "none"}}/>
-
-                        <div style={{fontSize: 11, margin: 0, textAlign: 'left'}}>
-                            to:
-                        </div>
-
-                        <DatePicker hintText="End date" mode="landscape"
-                                    underlineStyle={{display: "none"}}/>
-                    </div>
+                   <Date/>
 
 
                 </Paper>
