@@ -36,8 +36,11 @@ export default class Search extends Component {
                     </div>
                     <AutoComplete
                         hintText="Choose city"
-                        dataSource={this.props.suggestedCities}
-                        onUpdateInput={this.props.handleCityInputChange}
+                        dataSource={this.props.suggestedCities.map((place) => place.PlaceName)}
+                        onUpdateInput={(text)=> {
+                            this.props.handleCityInputChange(text, this.props.suggestedCities)
+                        }
+                        }
                         underlineStyle={{display: "none"}}
 
                     />
@@ -60,7 +63,7 @@ export default class Search extends Component {
                         Enter the date:
                     </div>
 
-                   <Date/>
+                    <Date/>
 
 
                 </Paper>

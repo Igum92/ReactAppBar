@@ -3,15 +3,21 @@ import Search from "../components/Search";
 import {cityChanged} from "../actions/actions";
 import {getSuggestedCities} from "../actions/actions";
 
-const mapStateToProps = (state) => ({
-    city: state.city,
-    suggestedCities: state.suggestedCities,
-});
+const mapStateToProps = (state) => {
+    return {
+        city: state.city,
+        suggestedCities: state.suggestedCities,
+    }
+};
 
 const mapDispatchToProps = (dispatch) => ({
-    handleCityInputChange: (city) => {
-        dispatch(cityChanged(city));
-        dispatch(getSuggestedCities(city));
+    handleCityInputChange: (text, suggestedCities) => {
+        dispatch(getSuggestedCities(text));
+        let filtered = suggestedCities.filter((city)=>( city.PlaceName === text));
+
+        if (filtered.length != 0) {
+            dispatch(cityChanged(filtered[0].PlaceId));
+        }
     }
 });
 
