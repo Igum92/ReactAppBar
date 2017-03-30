@@ -21,9 +21,7 @@ const AppBarSearch = () => {
                         </div>
                     }
                     iconElementRight={<div>
-                        <FlatButton style={{color: black}} label="Contact"/>
-                        <FlatButton style={{color: black}} label="INFO"/>
-                        <FlatButton style={{color: black}} label="LOGIN"/>
+
                     </div>}/>
     );
 };

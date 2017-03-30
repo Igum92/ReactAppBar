@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import ButtonPresentation from "../components/ButtonPresentation";
+import Button from "../components/Button";
 import {fetchCars} from "../actions/actions";
 
 const mapStateToProps = (state) => {
@@ -9,13 +9,15 @@ const mapStateToProps = (state) => {
         label: 'Search',
         city: state.city,
         startDate: state.date.startDate,
-        endDate: state.date.endDate
+        endDate: state.date.endDate,
+        startTime: state.time.startTime,
+        endTime: state.time.endTime
     }
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    onClick: (city, startDate, endDate) => dispatch(fetchCars(city, startDate, endDate))
+    onClick: (city, startDate, endDate, startTime, endTime) => dispatch(fetchCars(city, startDate, endDate, startTime, endTime))
 });
 
-const SearchButton = connect(mapStateToProps, mapDispatchToProps)(ButtonPresentation);
+const SearchButton = connect(mapStateToProps, mapDispatchToProps)(Button);
 export default SearchButton;

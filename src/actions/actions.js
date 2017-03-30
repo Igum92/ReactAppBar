@@ -32,6 +32,11 @@ export const carsReceived = (cars) => ({
     cars
 });
 
+
+function zerofill(i) {
+    return (i < 10 ? '0' : '') + i;
+}
+
 const changeDateFormat = (date) => {
     return getDateString(date);
 };
@@ -43,14 +48,20 @@ function getDateString(date) {
     return year + '-' + month + '-' + day;
 }
 
-function zerofill(i) {
-    return (i < 10 ? '0' : '') + i;
+const changeTimeFormat = (time) => {
+    return getTimeString(time);
+};
+
+function getTimeString(time) {
+    const hour = zerofill(time.getHours());
+    const minute = zerofill(time.getMinutes());
+    return hour + ':' + minute;
 }
 
-export function fetchCars(city, startDate, endDate) {
+export function fetchCars(city, startDate, endDate, startTime, endTime) {
     return function (dispatch) {
         if (city != '' && startDate != '' && endDate != '') {
-            fetch('http://localhost:1081/car?city=' + encodeURIComponent(city) + '&start_date=' + encodeURIComponent(changeDateFormat(startDate)) + 'T10:00&end_date=' + encodeURIComponent(changeDateFormat(endDate)) + 'T17:00')
+            fetch('http://localhost:1081/car?city=' + encodeURIComponent(city) + '&start_date=' + encodeURIComponent(changeDateFormat(startDate)) + 'T' + (changeTimeFormat(startTime)) +'&end_date=' + encodeURIComponent(changeDateFormat(endDate)) + 'T' + (changeTimeFormat(endTime)))
                 .then(response => response.json())
                 .then(function (cars) {
                         dispatch(carsReceived(cars));
@@ -68,6 +79,16 @@ export const startDateChanged = (startDate) => ({
 export const endDateChanged = (endDate) => ({
     type: "CHANGE_END_DATE",
     date: endDate
+});
+
+export const startTimeChanged = (startTime) => ({
+    type: "CHANGE_START_TIME",
+    time: startTime
+});
+
+export const endTimeChanged = (endTime) => ({
+    type: "CHANGE_END_TIME",
+    time: endTime
 });
 
 

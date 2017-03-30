@@ -5,13 +5,14 @@ import MenuItem from 'material-ui/MenuItem';
 import Paper from 'material-ui/Paper';
 import SearchButton from "../containers/SearchButton";
 import Date from "../containers/Date"
+import TimeContainer from "../containers/TimeContainer"
 
 
 const style = {
     paddingLeft: 10,
     marginTop: 5,
     height: '120px',
-    width: '200px',
+    width: '300px',
     float: 'left',
     textAlign: 'center',
     lineHeight: '15px',
@@ -59,12 +60,10 @@ export default class Search extends Component {
                     />
                 </Paper>
                 <Paper style={style} zDepth={1}>
-                    <div style={{fontSize: 11, margin: '0 5 0 0', textAlign: 'left'}}>
-                        Enter the date:
-                    </div>
+
 
                     <Date/>
-
+                    <TimeContainer />
 
                 </Paper>
 

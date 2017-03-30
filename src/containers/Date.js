@@ -10,7 +10,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
 
     handleChangeStartDate: (event, date) => {
-        console.log(date);
         dispatch(startDateChanged(date));
     },
 
