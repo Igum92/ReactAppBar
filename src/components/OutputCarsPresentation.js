@@ -1,32 +1,42 @@
 import React from 'react';
+import {GridList, GridTile} from 'material-ui/GridList';
+import Subheader from 'material-ui/Subheader';
+
+const styles = {
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+    },
+    gridList: {
+        width: '100%',
+        overflowY: 'auto',
+    },
+};
+
 
 const OutputCarsPresentation = ({cars}) => {
     return (
-        <div>
-            { cars ?
-                cars.map((car, index) =>
-                    <div key={index}>
-                        <div>
-                            {car.name}
-                        </div>
+        <div style={styles.root}>
 
-                        {car.image ?
-                        <div>
-                            <img src={car.image.url}/>
-                        </div>
-                        : null }
-                        <div>
-                            Price all days: {car.price}
-                        </div>
-                        {car.location ?
-                            <div>
-                                Address: {car.location}
-                            </div>
-                        : null }
-                        <hr/>
-                    </div>
-                ) : null}
+            <GridList
+                cellHeight={200}
+                style={styles.gridList}
+                cols={3}
+            >
+                <Subheader>Cars:</Subheader>
+                { cars.map((car, index) =>
+                <GridTile
+                    key={car.name}
+                    title={car.name}
+                    subtitle={<span>by <b>{car.price}</b><div>{car.location}</div></span>}
+                >
+                    <img src={car.image} />
+                </GridTile>
+                )}
+            </GridList>
         </div>
+
     );
 
 };
